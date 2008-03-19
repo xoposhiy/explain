@@ -1,0 +1,13 @@
+#TeXlipse project settings
+#Thu Jan 18 08:43:33 YEKT 2007
+builderNum=0
+outputDir=
+makeIndSty=
+bibrefDir=
+outputFormat=dvi
+tempDir=tmp
+mainTexFile=egorovpv.tex
+outputFile=egorovpv.dvi
+langSpell=ru
+markDer=true
+srcDir=
