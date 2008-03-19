@@ -1,0 +1,40 @@
+syntax exp.core;
+
+add Root:		exp.core.Axiom = *Header *Transforms;
+
+add Header: 	Header = @syntax *QName @semi;
+add QName:		QName = *@ident QNameTail;
+add QName0:		QNameTail = ;
+add QName1: 	QNameTail = @dot QName; 
+
+//	Uses:		Uses = Use UsesTail;
+//	Uses0:		UsesTail = ;
+//	Uses1:		UsesTail = Uses;
+//	Use:		Use = @uses UsesBody @semi;
+//	UseLex:		UsesBody = *LexiconUsage;
+//	UseLex1:	LexiconUsage = @lexicon *QName;
+//	UseSyn:		UsesBody = *SyntaxUsage;
+//	UseSyn1:	SyntaxUsage = @syntax *QName;
+
+add Trans:		Transforms = *Transform TransformsTail;
+add Trans0:		TransformsTail = ;
+add Trans1:		TransformsTail = Transforms;
+
+add Add:		Transform = @add *@ident @colon *Production;
+add Prod:		Production = *Head @eq *Body @semi;
+add TranHead:	Head = *QName;
+add TranBody0:	Body = ;
+add TranBody1:	Body = *SymbolItem BodyTail;
+add SymbolItem:	SymbolItem = Visibility Symbol;
+add BodyTail0:	BodyTail = ;
+add BodyTail1:	BodyTail = SymbolsList;
+add Vis0:		Visibility = *Invisible;
+add Vis1:		Visibility = *Visible;
+add Vis00:		Invisible = ;
+add Vis11:		Visible = @star;
+add Sym1:		Symbol = *Nonterminal;
+add Sym2:		Symbol = *Terminal;
+add Nonterm:	Nonterminal = *QName;
+add Term:		Terminal = @at *QName;
+
+//Ext:		TransformBody = *ExtractTransform;

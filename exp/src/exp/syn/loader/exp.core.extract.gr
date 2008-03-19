@@ -1,0 +1,12 @@
+syntax exp.core.extract;
+
+add Ext:	Transform = @ext *@ident @coma, *@ident @from *@ident @colon *exp.core.Production;
+
+add R1: A = B C D;
+ext R2, R3 from R1: A = B X;
+
+
+
+
+Extr:		exp.core.Transform = *ExtractTransform;
+ExtrBody:	ExtractTransform = 
