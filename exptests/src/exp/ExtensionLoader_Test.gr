@@ -1,0 +1,5 @@
+syntax syn.name;
+
+R1:		exp.core.Axiom = *A used.syntax2.B @c;
+R2:		A = ;
+R3:		used.syntax2.B = *@used.lexicon2.b @d;
