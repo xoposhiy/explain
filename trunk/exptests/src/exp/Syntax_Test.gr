@@ -1,0 +1,30 @@
+syntax exp.core.syntax;
+
+Root:		exp.core.Axiom = *Header *Transforms;
+
+Header: 	Header = @syntax *QName @semi;
+QName:		QName = *@ident QNameTail;
+QName0:		QNameTail = ;
+QName1: 	QNameTail = @dot QName; 
+
+Trans:		Transforms = *Transform TransformsTail;
+Trans0:		TransformsTail = ;
+Trans1:		TransformsTail = Transforms;
+Tran:		Transform = *@ident @colon TransformBody;
+
+Add:		TransformBody = *AddTransform;
+AddBody:	AddTransform = *Head @eq *Body @semi;
+TranHead:	Head = *QName;
+TranBody0:	Body = ;
+TranBody1:	Body = *SymbolItem BodyTail;
+SymbolItem:	SymbolItem = Visibility Symbol;
+BodyTail0:	BodyTail = ;
+BodyTail1:	BodyTail = SymbolsList;
+Vis0:		Visibility = *Invisible;
+Vis1:		Visibility = *Visible;
+Vis00:		Invisible = ;
+Vis11:		Visible = @star;
+Sym1:		Symbol = *Nonterminal;
+Sym2:		Symbol = *Terminal;
+Nonterm:	Nonterminal = *QName;
+Term:		Terminal = @at *QName;
