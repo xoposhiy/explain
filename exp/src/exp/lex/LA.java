@@ -42,12 +42,12 @@ public class LA {
 		return bestReader.createLexeme(new SourceContext(reader.getText(), start, end));
 	}
 	
-	private void skipSpaces(DocumentReader reader) {
+	public static void skipSpaces(DocumentReader reader) {
 		while (reader.hasMore() && isSpace(reader.peekNext()))
 			reader.getNext();
 	}
 
-	private boolean isSpace(char c) {
+	private static boolean isSpace(char c) {
 		switch (c) {
 		case ' ':
 		case '\n':

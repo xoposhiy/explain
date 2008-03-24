@@ -61,6 +61,7 @@ public abstract class AbstractSA {
 					((NontermNode) current.node).appendChild(children.get(i));
 			}
 		}
+		LA.skipSpaces(reader);
 		if (reader.hasMore())
 			throw new SyntaxException("Ожидался конец файла " + reader.getSourcePos());
 		return root;
