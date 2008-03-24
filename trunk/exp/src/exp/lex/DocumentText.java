@@ -32,7 +32,7 @@ public final class DocumentText {
 		assert lineOffsets != null;
 		assert lines >= 0;
 		final int len = lineOffsets.length;
-		if (lines > len) {
+		if (lines >= len) {
 			int[] buffer = new int[2 * (len > 0 ? len : 10)];
 			assert buffer.length > lineOffsets.length;
 			System.arraycopy(buffer, 0, lineOffsets, 0, len);
