@@ -1,0 +1,13 @@
+#TeXlipse project settings
+#Thu Jun 12 13:48:40 YEKST 2008
+builderNum=3
+outputDir=
+makeIndSty=
+bibrefDir=
+outputFormat=ps
+tempDir=tmp
+mainTexFile=document.tex
+outputFile=document.ps
+langSpell=ru
+markDer=true
+srcDir=
